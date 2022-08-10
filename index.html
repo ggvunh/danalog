@@ -7,11 +7,9 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.101.0">
     <title>DANALOG - DA NANG PORT LOGISTICS</title>
-
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/checkout/">
-
-<link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -69,7 +67,7 @@
     <!-- Custom styles for this template -->
     <link href="form-validation.css" rel="stylesheet">
   </head>
-  <body class="bg-light">
+  <body class="bg-light" id="app">
 
 <div class="container">
   <main>
@@ -89,66 +87,209 @@
               <input type="email" class="form-control" id="email" placeholder="you@example.com">
             </div>
             <div class="col-md-12">
-              <label for="country" class="form-label">Qúy khách muốn đăng ký loại hình dịch vụ tại Danalog<span class="text-danger">(*)</span></label>
-              <select class="form-select" id="country" required>
+              <label for="type-service" class="form-label">Qúy khách muốn đăng ký loại hình dịch vụ tại Danalog<span class="text-danger">(*)</span></label>
+              <select class="form-select" id="type-service" required>
+                <option value="">--chọn loại hình dịch vụ--</option>
                 <option value="Nhận hàng">Nhận hàng</option>
-                <option value="Nhận hàng">Gia hạn ngày nhận hàng</option>
-                <option value="Nhận hàng">Kiểm hóa</option>
-                <option value="Nhận hàng">Lệnh lấy mẫu</option>
-                <option value="Nhận hàng">Lệnh dán tem</option>
+                <option value="Gia hạn ngày nhận hàng">Gia hạn ngày nhận hàng</option>
+                <option value="Kiểm hóa">Kiểm hóa</option>
+                <option value="Lệnh lấy mẫu">Lệnh lấy mẫu</option>
+                <option value="Lệnh dán tem">Lệnh dán tem</option>
               </select>
             </div>
-            <hr class="my-4">
-            <h4 class="mb-3">Thông tin đăng ký nhận hàng</h4>
-            <div class="col-12">
-              <label for="email" class="form-label">Ngày nhận hàng<span class="text-danger">(*)</span></label>
-              <input type="date" class="form-control" id="date" placeholder="">
+            <!-- Form nhận hàng -->
+            <div id="nhan-hang">
+              <hr class="my-4">
+              <h4 class="mb-3">Thông tin đăng ký nhận hàng</h4>
+              <div class="col-12">
+                <label for="email" class="form-label">Ngày nhận hàng<span class="text-danger">(*)</span></label>
+                <input type="date" class="form-control" id="date" placeholder="">
+              </div>
+  
+              <div class="col-12">
+                <label for="email" class="form-label">Số container<span class="text-danger">(*)</span></label>
+                <input type="text" class="form-control" id="email" placeholder="">
+              </div>
+  
+              <div class="col-12">
+                <label for="email" class="form-label">Housebill<span class="text-danger">(*)</span></label>
+                <input type="text" class="form-control" id="email" placeholder="">
+              </div>
+  
+              <div class="col-12">
+                <label for="email" class="form-label">Thông tin xuất hóa đơn</label>
+                <input type="text" class="form-control" id="email" placeholder="">
+              </div>
+  
+              <div class="col-12">
+                <label for="email" class="form-label">Số xe nhận hàng - Tên người nhận hàng - Số điện thoại<span class="text-danger">(*)</span></label>
+                <input type="text" class="form-control" id="email" placeholder="">
+              </div>
+  
+              <div class="col-12">
+                <label for="email" class="form-label">Tên hàng hóa - Loại hàng hóa<span class="text-danger">(*)</span></label>
+                <input type="text" class="form-control" id="email" placeholder="">
+              </div>
+  
+              <div class="col-md-12">
+                <label for="country" class="form-label">Phương tiện nhận hàng<span class="text-danger">(*)</span></label>
+                <select class="form-select" id="country" required>
+                  <option value="Container">Container</option>
+                  <option value="Nhận hàng">Mooc sàn</option>
+                  <option value="Nhận hàng">Xe tải</option>
+                </select>
+              </div>
+  
+              <div class="col-md-12">
+                <label for="country" class="form-label">Lưu ý khi nhận hàng<span class="text-danger">(*)</span></label>
+                <select class="form-select" id="country" required>
+                  <option value="Hàng dễ vỡ">Hàng dễ vỡ</option>
+                  <option value="Hàng không được thấm nước">Hàng không được thấm nước</option>
+                </select>
+              </div>
+            </div>
+            
+            <!-- Gia hang nhan hang -->
+            <div id="gia-han-nhan-hang">
+              <hr class="my-4">
+              <h4 class="mb-3">ĐĂNG KÝ GIA HẠN NGÀY NHẬN HÀNG</h4>
+              <div class="col-12">
+                <label for="email" class="form-label">Ngày nhận hàng mới<span class="text-danger">(*)</span></label>
+                <input type="date" class="form-control" id="date" placeholder="">
+              </div>
+  
+              <div class="col-12">
+                <label for="email" class="form-label">Số container<span class="text-danger">(*)</span></label>
+                <input type="text" class="form-control" id="email" placeholder="">
+              </div>
+  
+              <div class="col-12">
+                <label for="email" class="form-label">Housebill<span class="text-danger">(*)</span></label>
+                <input type="text" class="form-control" id="email" placeholder="">
+              </div>
+
+              <div class="col-12">
+                <label for="email" class="form-label">Số xe nhận hàng - Tên người nhận hàng - Số điện thoại<span class="text-danger">(*)</span></label>
+                <input type="text" class="form-control" id="email" placeholder="">
+              </div>
+
+              <div class="col-12">
+                <label for="email" class="form-label">Thông tin xuất hóa đơn</span></label>
+                <input type="text" class="form-control" id="email" placeholder="">
+              </div>
+  
+              <div class="col-12">
+                <label for="email" class="form-label">Tên hàng hóa - Loại hàng hóa<span class="text-danger">(*)</span></label>
+                <input type="text" class="form-control" id="email" placeholder="">
+              </div>
+  
+              <div class="col-md-12">
+                <label for="country" class="form-label">Phương tiện nhận hàng<span class="text-danger">(*)</span></label>
+                <select class="form-select" id="country" required>
+                  <option value="Container">Container</option>
+                  <option value="Nhận hàng">Mooc sàn</option>
+                  <option value="Nhận hàng">Xe tải</option>
+                </select>
+              </div>
+  
+              <div class="col-12">
+                <label for="email" class="form-label">Lưu ý khi nhận hàng<span class="text-danger">(*)</span></label>
+                <input type="text" class="form-control" id="email" placeholder="">
+              </div>
             </div>
 
-            <div class="col-12">
-              <label for="email" class="form-label">Số container<span class="text-danger">(*)</span></label>
-              <input type="text" class="form-control" id="email" placeholder="">
+            <!-- ĐĂNG KÝ KIỂM HÓA -->
+            <div id="kiem-hoa">
+              <hr class="my-4">
+              <h4 class="mb-3">ĐĂNG KÝ KIỂM HÓA</h4>
+              <div class="col-12">
+                <label for="email" class="form-label">Ngày kiểm hóa <span class="text-danger">(*)</span></label>
+                <input type="date" class="form-control" id="date" placeholder="">
+              </div>
+  
+              <div class="col-12">
+                <label for="email" class="form-label">Số container<span class="text-danger">(*)</span></label>
+                <input type="text" class="form-control" id="email" placeholder="">
+              </div>
+  
+              <div class="col-12">
+                <label for="email" class="form-label">Housebill<span class="text-danger">(*)</span></label>
+                <input type="text" class="form-control" id="email" placeholder="">
+              </div>
+
+              <div class="col-12">
+                <label for="email" class="form-label">Tên người kiểm hóa tại kho - CCCD/CMND - Số điện thoại<span class="text-danger">(*)</span></label>
+                <input type="text" class="form-control" id="email" placeholder="">
+              </div>
+
+              <div class="col-12">
+                <label for="email" class="form-label">Thông tin xuất hóa đơn</span></label>
+                <input type="text" class="form-control" id="email" placeholder="">
+              </div>
             </div>
 
-            <div class="col-12">
-              <label for="email" class="form-label">Housebill<span class="text-danger">(*)</span></label>
-              <input type="text" class="form-control" id="email" placeholder="">
+
+            <!-- ĐĂNG KÝ LẤY MẪU -->
+            <div id="lenh-lay-mau">
+              <hr class="my-4">
+              <h4 class="mb-3">ĐĂNG KÝ LẤY MẪU</h4>
+              <div class="col-12">
+                <label for="email" class="form-label">Ngày lấy mẫu<span class="text-danger">(*)</span></label>
+                <input type="date" class="form-control" id="date" placeholder="">
+              </div>
+  
+              <div class="col-12">
+                <label for="email" class="form-label">Số container<span class="text-danger">(*)</span></label>
+                <input type="text" class="form-control" id="email" placeholder="">
+              </div>
+  
+              <div class="col-12">
+                <label for="email" class="form-label">Housebill<span class="text-danger">(*)</span></label>
+                <input type="text" class="form-control" id="email" placeholder="">
+              </div>
+
+              <div class="col-12">
+                <label for="email" class="form-label">Tên người lấy mẫu - CCCD/CMND - Số điện thoại<span class="text-danger">(*)</span></label>
+                <input type="text" class="form-control" id="email" placeholder="">
+              </div>
+
+              <div class="col-12">
+                <label for="email" class="form-label">Thông tin xuất hóa đơn</span></label>
+                <input type="text" class="form-control" id="email" placeholder="">
+              </div>
             </div>
 
-            <div class="col-12">
-              <label for="email" class="form-label">Thông tin xuất hóa đơn</label>
-              <input type="text" class="form-control" id="email" placeholder="">
-            </div>
+            <!-- ĐĂNG KÝ DÁN TEM -->
+            <div id="lenh-dan-tem">
+              <hr class="my-4">
+              <h4 class="mb-3">ĐĂNG KÝ DÁN TEM</h4>
+              <div class="col-12">
+                <label for="email" class="form-label">Ngày dán tem<span class="text-danger">(*)</span></label>
+                <input type="date" class="form-control" id="date" placeholder="">
+              </div>
+  
+              <div class="col-12">
+                <label for="email" class="form-label">Số container<span class="text-danger">(*)</span></label>
+                <input type="text" class="form-control" id="email" placeholder="">
+              </div>
+  
+              <div class="col-12">
+                <label for="email" class="form-label">Housebill<span class="text-danger">(*)</span></label>
+                <input type="text" class="form-control" id="email" placeholder="">
+              </div>
 
-            <div class="col-12">
-              <label for="email" class="form-label">Số xe nhận hàng - Tên người nhận hàng - Số điện thoại<span class="text-danger">(*)</span></label>
-              <input type="text" class="form-control" id="email" placeholder="">
-            </div>
+              <div class="col-12">
+                <label for="email" class="form-label">Tên người dán tem - CCCD/CMND - Số điện thoại<span class="text-danger">(*)</span></label>
+                <input type="text" class="form-control" id="email" placeholder="">
+              </div>
 
-            <div class="col-12">
-              <label for="email" class="form-label">Tên hàng hóa - Loại hàng hóa<span class="text-danger">(*)</span></label>
-              <input type="text" class="form-control" id="email" placeholder="">
-            </div>
-
-            <div class="col-md-12">
-              <label for="country" class="form-label">Phương tiện nhận hàng<span class="text-danger">(*)</span></label>
-              <select class="form-select" id="country" required>
-                <option value="Container">Container</option>
-                <option value="Nhận hàng">Mooc sàn</option>
-                <option value="Nhận hàng">Xe tải</option>
-              </select>
-            </div>
-
-            <div class="col-md-12">
-              <label for="country" class="form-label">Lưu ý khi nhận hàng<span class="text-danger">(*)</span></label>
-              <select class="form-select" id="country" required>
-                <option value="Hàng dễ vỡ">Hàng dễ vỡ</option>
-                <option value="Hàng không được thấm nước">Hàng không được thấm nước</option>
-              </select>
+              <div class="col-12">
+                <label for="email" class="form-label">Thông tin xuất hóa đơn</span></label>
+                <input type="text" class="form-control" id="email" placeholder="">
+              </div>
             </div>
 
           </div>
-
           <hr class="my-4">
           <button class="w-100 btn btn-primary btn-lg" type="submit">Gửi</button>
         </form>
@@ -157,16 +298,60 @@
   </main>
 
   <footer class="my-5 pt-5 text-muted text-center text-small">
-    <p class="mb-1">&copy; 2022 DANALOG - DA NANG PORT LOGISTICS</p>
+    <p class="mb-1">&copy; 2022 DANALOG - DA NANG PORT LOGISTICS {{ message }}</p>
     <ul class="list-inline">
       <li class="list-inline-item"><a href="https://danalog.com.vn/">Webiste</a></li>
     </ul>
   </footer>
 </div>
-
-
-    <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
-
-      <script src="form-validation.js"></script>
+  <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="form-validation.js"></script>
   </body>
 </html>
+<script>
+  $(document).ready(function(){
+
+    // hide form
+    $("#nhan-hang").hide();
+    $("#gia-han-nhan-hang").hide();
+    $("#kiem-hoa").hide();
+    $("#lenh-lay-mau").hide();
+    $("#lenh-dan-tem").hide();
+    var typeService = $("#type-service").val();
+    $("#type-service").change(function(){
+      var typeService = $(this).val();
+      changeShow(typeService);
+    });
+    function changeShow(value) {
+      if (value === 'Nhận hàng') {
+        $("#nhan-hang").show();
+      } else {
+        $("#nhan-hang").hide();
+      }
+
+      if (value === 'Gia hạn ngày nhận hàng') {
+        $("#gia-han-nhan-hang").show();
+      } else {
+        $("#gia-han-nhan-hang").hide();
+      }
+
+      if (value === 'Kiểm hóa') {
+        $("#kiem-hoa").show();
+      } else {
+        $("#kiem-hoa").hide();
+      }
+
+      if (value === 'Lệnh lấy mẫu') {
+        $("#lenh-lay-mau").show();
+      } else {
+        $("#lenh-lay-mau").hide();
+      }
+
+      if (value === 'Lệnh dán tem') {
+        $("#lenh-dan-tem").show();
+      } else {
+        $("#lenh-dan-tem").hide();
+      }
+    }
+  });
+</script>
