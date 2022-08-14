@@ -480,19 +480,26 @@
         }
       }
 
+      data.timestamp = new Date();
       $("#loading").show();
       $("#submit").attr("disabled", true);
 
-      var url = "https://script.google.com/macros/s/AKfycbzKcl0hjAXofxLyyt1c2nY38585UHraWcX_cnmW6mhLMrLyRY9MrTRzo7YBMC-SParGeA/exec"
+      var url = "https://script.google.com/macros/s/AKfycbxbErJvGV3Jo0R7vdgRmfReT3uJirA5oB_8YkewR-XrysdPUYAXjXEGXPEbtD3e_NU/exec"
       $.ajax({
         type: "POST",
         url: url,
         data: data,
       }).done(function(response) {
+        if (response && response.result === 'success') {
           $('#customer-code').text(code);
           $('#modal-result').modal('show');
           $("#loading").hide();
           $("#submit").removeAttr("disabled");
+        } else {
+          $("#loading").hide();
+          $("#submit").removeAttr("disabled");
+          alert("Đã xảy ra lỗi vui lòng thử lại")
+        }
       }).fail(function() {
         $("#loading").hide();
         $("#submit").removeAttr("disabled");
