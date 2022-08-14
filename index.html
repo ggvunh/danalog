@@ -9,7 +9,11 @@
     <title>DANALOG - DA NANG PORT LOGISTICS</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/checkout/">
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -84,11 +88,11 @@
           <div class="row g-3">
             <div class="col-12">
               <label for="email" class="form-label">Email <span class="text-danger">(*)</span></label>
-              <input type="email" class="form-control" id="email" placeholder="you@example.com">
+              <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com">
             </div>
             <div class="col-md-12">
               <label for="type-service" class="form-label">Qúy khách muốn đăng ký loại hình dịch vụ tại Danalog<span class="text-danger">(*)</span></label>
-              <select class="form-select" id="type-service" required>
+              <select class="form-select" id="type-service" name="type-service" required>
                 <option value="">--chọn loại hình dịch vụ--</option>
                 <option value="Nhận hàng">Nhận hàng</option>
                 <option value="Gia hạn ngày nhận hàng">Gia hạn ngày nhận hàng</option>
@@ -103,37 +107,37 @@
               <h4 class="mb-3">Thông tin đăng ký nhận hàng</h4>
               <div class="col-12">
                 <label for="email" class="form-label">Ngày nhận hàng<span class="text-danger">(*)</span></label>
-                <input type="date" class="form-control" id="date" placeholder="">
+                <input type="date" class="form-control" id="nh-ngaynhan" placeholder="">
               </div>
   
               <div class="col-12">
                 <label for="email" class="form-label">Số container<span class="text-danger">(*)</span></label>
-                <input type="text" class="form-control" id="email" placeholder="">
+                <input type="text" class="form-control" id="nh-socontainer" placeholder="">
               </div>
   
               <div class="col-12">
                 <label for="email" class="form-label">Housebill<span class="text-danger">(*)</span></label>
-                <input type="text" class="form-control" id="email" placeholder="">
+                <input type="text" class="form-control" id="nh-housebill" placeholder="">
               </div>
   
               <div class="col-12">
                 <label for="email" class="form-label">Thông tin xuất hóa đơn</label>
-                <input type="text" class="form-control" id="email" placeholder="">
+                <input type="text" class="form-control" id="nh-thongtinhoadon" placeholder="">
               </div>
   
               <div class="col-12">
                 <label for="email" class="form-label">Số xe nhận hàng - Tên người nhận hàng - Số điện thoại<span class="text-danger">(*)</span></label>
-                <input type="text" class="form-control" id="email" placeholder="">
+                <input type="text" class="form-control" id="nh-soxe" placeholder="">
               </div>
   
               <div class="col-12">
                 <label for="email" class="form-label">Tên hàng hóa - Loại hàng hóa<span class="text-danger">(*)</span></label>
-                <input type="text" class="form-control" id="email" placeholder="">
+                <input type="text" class="form-control" id="nh-tenhanghoa" placeholder="">
               </div>
   
               <div class="col-md-12">
                 <label for="country" class="form-label">Phương tiện nhận hàng<span class="text-danger">(*)</span></label>
-                <select class="form-select" id="country" required>
+                <select class="form-select" id="nh-phuongtien" required>
                   <option value="Container">Container</option>
                   <option value="Nhận hàng">Mooc sàn</option>
                   <option value="Nhận hàng">Xe tải</option>
@@ -142,7 +146,7 @@
   
               <div class="col-md-12">
                 <label for="country" class="form-label">Lưu ý khi nhận hàng<span class="text-danger">(*)</span></label>
-                <select class="form-select" id="country" required>
+                <select class="form-select" id="nh-luuy" required>
                   <option value="Hàng dễ vỡ">Hàng dễ vỡ</option>
                   <option value="Hàng không được thấm nước">Hàng không được thấm nước</option>
                 </select>
@@ -155,37 +159,37 @@
               <h4 class="mb-3">ĐĂNG KÝ GIA HẠN NGÀY NHẬN HÀNG</h4>
               <div class="col-12">
                 <label for="email" class="form-label">Ngày nhận hàng mới<span class="text-danger">(*)</span></label>
-                <input type="date" class="form-control" id="date" placeholder="">
+                <input type="date" class="form-control" id="gh-ngaynhan" placeholder="">
               </div>
   
               <div class="col-12">
                 <label for="email" class="form-label">Số container<span class="text-danger">(*)</span></label>
-                <input type="text" class="form-control" id="email" placeholder="">
+                <input type="text" class="form-control" id="gh-socontainer" placeholder="">
               </div>
   
               <div class="col-12">
                 <label for="email" class="form-label">Housebill<span class="text-danger">(*)</span></label>
-                <input type="text" class="form-control" id="email" placeholder="">
+                <input type="text" class="form-control" id="gh-housebill" placeholder="">
               </div>
 
               <div class="col-12">
                 <label for="email" class="form-label">Số xe nhận hàng - Tên người nhận hàng - Số điện thoại<span class="text-danger">(*)</span></label>
-                <input type="text" class="form-control" id="email" placeholder="">
+                <input type="text" class="form-control" id="gh-soxe" placeholder="">
               </div>
 
               <div class="col-12">
                 <label for="email" class="form-label">Thông tin xuất hóa đơn</span></label>
-                <input type="text" class="form-control" id="email" placeholder="">
+                <input type="text" class="form-control" id="gh-thongtinhoadon" placeholder="">
               </div>
   
               <div class="col-12">
                 <label for="email" class="form-label">Tên hàng hóa - Loại hàng hóa<span class="text-danger">(*)</span></label>
-                <input type="text" class="form-control" id="email" placeholder="">
+                <input type="text" class="form-control" id="gh-tenhanghoa" placeholder="">
               </div>
   
               <div class="col-md-12">
                 <label for="country" class="form-label">Phương tiện nhận hàng<span class="text-danger">(*)</span></label>
-                <select class="form-select" id="country" required>
+                <select class="form-select" id="gh-phuongtien" required>
                   <option value="Container">Container</option>
                   <option value="Nhận hàng">Mooc sàn</option>
                   <option value="Nhận hàng">Xe tải</option>
@@ -194,7 +198,7 @@
   
               <div class="col-12">
                 <label for="email" class="form-label">Lưu ý khi nhận hàng<span class="text-danger">(*)</span></label>
-                <input type="text" class="form-control" id="email" placeholder="">
+                <input type="text" class="form-control" id="gh-luuy" placeholder="">
               </div>
             </div>
 
@@ -204,27 +208,27 @@
               <h4 class="mb-3">ĐĂNG KÝ KIỂM HÓA</h4>
               <div class="col-12">
                 <label for="email" class="form-label">Ngày kiểm hóa <span class="text-danger">(*)</span></label>
-                <input type="date" class="form-control" id="date" placeholder="">
+                <input type="date" class="form-control" id="kh-ngaynhan" placeholder="">
               </div>
   
               <div class="col-12">
                 <label for="email" class="form-label">Số container<span class="text-danger">(*)</span></label>
-                <input type="text" class="form-control" id="email" placeholder="">
+                <input type="text" class="form-control" id="kh-socontainer" placeholder="">
               </div>
   
               <div class="col-12">
                 <label for="email" class="form-label">Housebill<span class="text-danger">(*)</span></label>
-                <input type="text" class="form-control" id="email" placeholder="">
+                <input type="text" class="form-control" id="kh-housebill" placeholder="">
               </div>
 
               <div class="col-12">
                 <label for="email" class="form-label">Tên người kiểm hóa tại kho - CCCD/CMND - Số điện thoại<span class="text-danger">(*)</span></label>
-                <input type="text" class="form-control" id="email" placeholder="">
+                <input type="text" class="form-control" id="kh-tennguoikiemhoa" placeholder="">
               </div>
 
               <div class="col-12">
                 <label for="email" class="form-label">Thông tin xuất hóa đơn</span></label>
-                <input type="text" class="form-control" id="email" placeholder="">
+                <input type="text" class="form-control" id="kh-thongtinhoadon" placeholder="">
               </div>
             </div>
 
@@ -235,27 +239,27 @@
               <h4 class="mb-3">ĐĂNG KÝ LẤY MẪU</h4>
               <div class="col-12">
                 <label for="email" class="form-label">Ngày lấy mẫu<span class="text-danger">(*)</span></label>
-                <input type="date" class="form-control" id="date" placeholder="">
+                <input type="date" class="form-control" id="lm-ngaynhan" placeholder="">
               </div>
   
               <div class="col-12">
                 <label for="email" class="form-label">Số container<span class="text-danger">(*)</span></label>
-                <input type="text" class="form-control" id="email" placeholder="">
+                <input type="text" class="form-control" id="lm-socontainer" placeholder="">
               </div>
   
               <div class="col-12">
                 <label for="email" class="form-label">Housebill<span class="text-danger">(*)</span></label>
-                <input type="text" class="form-control" id="email" placeholder="">
+                <input type="text" class="form-control" id="lm-housebill" placeholder="">
               </div>
 
               <div class="col-12">
                 <label for="email" class="form-label">Tên người lấy mẫu - CCCD/CMND - Số điện thoại<span class="text-danger">(*)</span></label>
-                <input type="text" class="form-control" id="email" placeholder="">
+                <input type="text" class="form-control" id="lm-nguoilaymau" placeholder="">
               </div>
 
               <div class="col-12">
                 <label for="email" class="form-label">Thông tin xuất hóa đơn</span></label>
-                <input type="text" class="form-control" id="email" placeholder="">
+                <input type="text" class="form-control" id="lm-thongtinhoadon" placeholder="">
               </div>
             </div>
 
@@ -265,37 +269,60 @@
               <h4 class="mb-3">ĐĂNG KÝ DÁN TEM</h4>
               <div class="col-12">
                 <label for="email" class="form-label">Ngày dán tem<span class="text-danger">(*)</span></label>
-                <input type="date" class="form-control" id="date" placeholder="">
+                <input type="date" class="form-control" id="dt-ngaynhan" placeholder="">
               </div>
   
               <div class="col-12">
                 <label for="email" class="form-label">Số container<span class="text-danger">(*)</span></label>
-                <input type="text" class="form-control" id="email" placeholder="">
+                <input type="text" class="form-control" id="dt-socontainer" placeholder="">
               </div>
   
               <div class="col-12">
                 <label for="email" class="form-label">Housebill<span class="text-danger">(*)</span></label>
-                <input type="text" class="form-control" id="email" placeholder="">
+                <input type="text" class="form-control" id="dt-housebill" placeholder="">
               </div>
 
               <div class="col-12">
                 <label for="email" class="form-label">Tên người dán tem - CCCD/CMND - Số điện thoại<span class="text-danger">(*)</span></label>
-                <input type="text" class="form-control" id="email" placeholder="">
+                <input type="text" class="form-control" id="dt-tennguoidanten" placeholder="">
               </div>
 
               <div class="col-12">
                 <label for="email" class="form-label">Thông tin xuất hóa đơn</span></label>
-                <input type="text" class="form-control" id="email" placeholder="">
+                <input type="text" class="form-control" id="dt-thongtinhoadon" placeholder="">
               </div>
             </div>
 
           </div>
           <hr class="my-4">
-          <button class="w-100 btn btn-primary btn-lg" type="submit">Gửi</button>
+          <button class="w-100 btn btn-primary btn-lg" type="button" id="submit">
+            <div id="loading" class="spinner-border" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+            Gửi</button>
         </form>
       </div>
     </div>
   </main>
+
+  <!-- Modal -->
+  <div class="modal fade" id="modal-result" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Đăng ký thành công</h5>
+        </div>
+        <div class="modal-body">
+          <p>Chúc mừng bạn đã đăng ký thành công dịch vụ tại Danalog</p>
+          <p>Mã khách hàng của bạn là: </p>
+          <h4 id="customer-code" class="text-center"></h4>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="close-modal">Đóng</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <footer class="my-5 pt-5 text-muted text-center text-small">
     <p class="mb-1">&copy; 2022 DANALOG - DA NANG PORT LOGISTICS</p>
@@ -305,13 +332,14 @@
   </footer>
 </div>
   <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="form-validation.js"></script>
+  <!-- <script src="form-validation.js"></script> -->
   </body>
 </html>
 <script>
   $(document).ready(function(){
 
     // hide form
+    $("#loading").hide();
     $("#nhan-hang").hide();
     $("#gia-han-nhan-hang").hide();
     $("#kiem-hoa").hide();
@@ -322,6 +350,205 @@
       var typeService = $(this).val();
       changeShow(typeService);
     });
+
+
+    $("#submit").click(function(){
+      // validate type
+      var typeService = $("#type-service").val();
+      var email = $("#email").val();
+
+      // Nhan hang
+      var nhngaynhan = $("#nh-ngaynhan").val();
+      var nhsocontainer = $("#nh-socontainer").val();
+      var nhhousebill = $("#nh-housebill").val();
+      var nhthongtinhoadon = $("#nh-thongtinhoadon").val();
+      var nhsoxe = $("#nh-soxe").val();
+      var nhtenhanghoa = $("#nh-tenhanghoa").val();
+      var nhphuongtien = $("#nh-phuongtien").val();
+      var nhluuy = $("#nh-luuy").val();
+
+      // Gia hang
+      var ghngaynhan = $("#gh-ngaynhan").val();
+      var ghsocontainer = $("#gh-socontainer").val();
+      var ghhousebill = $("#gh-housebill").val();
+      var ghsoxe = $("#gh-soxe").val();
+      var ghthongtinhoadon = $("#gh-thongtinhoadon").val();
+      var ghtenhanghoa = $("#gh-tenhanghoa").val();
+      var ghphuongtien = $("#gh-phuongtien").val();
+      var ghluuy = $("#gh-luuy").val();
+
+      // kiem hoa
+      var khngaynhan = $("#kh-ngaynhan").val();
+      var khsocontainer = $("#kh-socontainer").val();
+      var khhousebill = $("#kh-housebill").val();
+      var khtennguoikiemhoa = $("#kh-tennguoikiemhoa").val();
+      var khthongtinhoadon = $("#kh-thongtinhoadon").val();
+      // Dang Ky Lay Mau
+      var lmngaynhan = $("#lm-ngaynhan").val();
+      var lmsocontainer = $("#lm-socontainer").val();
+      var lmhousebill = $("#lm-housebill").val();
+      var lmnguoilaymau = $("#lm-nguoilaymau").val();
+      var lmthongtinhoadon = $("#lm-thongtinhoadon").val();
+
+      // Dang Ky Dan Tem
+      var dtngaynhan = $("#dt-ngaynhan").val();
+      var dtsocontainer = $("#dt-socontainer").val();
+      var dthousebill = $("#dt-housebill").val();
+      var dttennguoidanten = $("#dt-tennguoidanten").val();
+      var dtthongtinhoadon = $("#dt-thongtinhoadon").val();
+
+
+      if (!typeService) {
+        alert("Vui lòng chọn loại hình dịch vụ");
+        return
+      }
+      if (!confirm("Bạn chắc chắn muốn đăng ký dịch vụ")) {
+        return;
+      };
+      var code = generateCode('Nhận hàng');
+      var data = null;
+
+      if (typeService === 'Nhận hàng') {
+        data = {
+          "nhngaynhan": nhngaynhan,
+          "nhsocontainer": nhsocontainer,
+          "nhhousebill": nhhousebill,
+          "nhthongtinhoadon": nhthongtinhoadon,
+          "nhsoxe": nhsoxe,
+          "nhtenhanghoa": nhtenhanghoa,
+          "nhphuongtien": nhphuongtien,
+          "nhluuy": nhluuy,
+          "typeService": typeService,
+          "email": email,
+          "code": code
+        }
+      }
+
+      if (typeService === 'Gia hạn ngày nhận hàng') {
+        data = {
+          'ghngaynhan': ghngaynhan,
+          'ghsocontainer': ghsocontainer,
+          'ghhousebill': ghhousebill,
+          'ghsoxe': ghsoxe,
+          'ghthongtinhoadon': ghthongtinhoadon,
+          'ghtenhanghoa': ghtenhanghoa,
+          'ghphuongtien': ghphuongtien,
+          'ghluuy': ghluuy,
+          "typeService": typeService,
+          "email": email,
+          "code": code
+        }
+      }
+
+      if (typeService === 'Kiểm hóa') {
+        data = {
+          'khngaynhan': khngaynhan,
+          'khsocontainer': khsocontainer,
+          'khhousebill': khhousebill,
+          'khtennguoikiemhoa': khtennguoikiemhoa,
+          'khthongtinhoadon': khthongtinhoadon,
+          "typeService": typeService,
+          "email": email,
+          "code": code
+        }
+      }
+
+      if (typeService === 'Lệnh lấy mẫu') {
+        data = {
+          'lmngaynhan': lmngaynhan,
+          'lmsocontainer': lmsocontainer,
+          'lmhousebill': lmhousebill,
+          'lmnguoilaymau': lmnguoilaymau,
+          'lmthongtinhoadon': lmthongtinhoadon,
+          "typeService": typeService,
+          "email": email,
+          "code": code
+        }
+      }
+
+
+      if (typeService === 'Lệnh dán tem') {
+        data = {
+          'dtngaynhan': dtngaynhan,
+          'dtsocontainer': dtsocontainer,
+          'dthousebill': dthousebill,
+          'dttennguoidanten': dttennguoidanten,
+          'dtthongtinhoadon': dtthongtinhoadon,
+          "typeService": typeService,
+          "email": email,
+          "code": code
+        }
+      }
+
+      $("#loading").show();
+      $("#submit").attr("disabled", true);
+
+      var url = "https://script.google.com/macros/s/AKfycbzKcl0hjAXofxLyyt1c2nY38585UHraWcX_cnmW6mhLMrLyRY9MrTRzo7YBMC-SParGeA/exec"
+      $.ajax({
+        type: "POST",
+        url: url,
+        data: data,
+      }).done(function(response) {
+          $('#customer-code').text(code);
+          $('#modal-result').modal('show');
+          $("#loading").hide();
+          $("#submit").removeAttr("disabled");
+      }).fail(function() {
+        $("#loading").hide();
+        $("#submit").removeAttr("disabled");
+        alert("Đã xảy ra lỗi vui lòng thử lại")
+      });
+    });
+
+    // colde modal
+    $("#close-modal").click(function(){
+      $('#modal-result').modal('hide');
+    });
+
+    // generate code
+    function generateCode(type)
+    {
+      switch (type) {
+        case 'Nhận hàng':
+          var preType = '1';
+          break;
+        case 'Gia hạn ngày nhận hàng':
+          var preType = '2';
+          break;
+        case 'Kiểm hóa':
+          var preType = '3';
+          break; 
+        case 'Lệnh lấy mẫu':
+          var preType = '4';
+          break;
+        case 'Lệnh dán tem':
+          var preType = '5';
+          break;       
+        default:
+          var preType = '0';
+          break;
+      }
+      var date = new Date();
+      var day = date.getDate()
+      if (day < 9) {
+        day = "0" + day.toString() 
+      } else {
+        day = day.toString();
+      }
+      var month = date.getMonth();
+      if (month < 9) {
+        month = "0" + month.toString() 
+      } else {
+        month = month.toString()
+      }
+      var year = date.getFullYear().toString().slice(2);
+      var code = preType + day + month + year;
+      var rand = Math.floor(1000 + Math.random() * 9000);
+      code = code + rand;
+      return code;
+    }
+
+    // change view
     function changeShow(value) {
       if (value === 'Nhận hàng') {
         $("#nhan-hang").show();
