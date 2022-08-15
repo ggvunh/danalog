@@ -402,9 +402,6 @@
         alert("Vui lòng chọn loại hình dịch vụ");
         return
       }
-      if (!confirm("Bạn chắc chắn muốn đăng ký dịch vụ")) {
-        return;
-      };
       var code = generateCode(typeService);
       var data = null;
 
@@ -422,6 +419,10 @@
           "email": email,
           "code": code
         }
+        if (!email || !typeService || !nhngaynhan || !nhsocontainer || !nhhousebill || !nhsoxe || !nhtenhanghoa || !nhphuongtien || !nhluuy) {
+          alert("Vui lòng điền đầy đủ thông tin");
+          return
+        }
       }
 
       if (typeService === 'Gia hạn ngày nhận hàng') {
@@ -438,6 +439,10 @@
           "email": email,
           "code": code
         }
+        if (!email || !typeService || !ghngaynhan || !ghsocontainer || !ghhousebill || !ghsoxe || !ghtenhanghoa || !ghphuongtien || !ghluuy) {
+          alert("Vui lòng điền đầy đủ thông tin");
+          return
+        }
       }
 
       if (typeService === 'Kiểm hóa') {
@@ -451,6 +456,10 @@
           "email": email,
           "code": code
         }
+        if (!email || !typeService || !khngaynhan || !khsocontainer || !khhousebill || !khtennguoikiemhoa) {
+          alert("Vui lòng điền đầy đủ thông tin");
+          return
+        }
       }
 
       if (typeService === 'Lệnh lấy mẫu') {
@@ -463,6 +472,10 @@
           "typeService": typeService,
           "email": email,
           "code": code
+        }
+        if (!email || !typeService || !lmngaynhan || !lmsocontainer || !lmhousebill || !lmnguoilaymau) {
+          alert("Vui lòng điền đầy đủ thông tin");
+          return
         }
       }
 
@@ -478,8 +491,15 @@
           "email": email,
           "code": code
         }
+        if (!email || !typeService || !dtngaynhan || !dtsocontainer || !dthousebill || !dttennguoidanten) {
+          alert("Vui lòng điền đầy đủ thông tin");
+          return
+        }
       }
-
+      // confirm
+      if (!confirm("Bạn chắc chắn muốn đăng ký dịch vụ")) {
+        return;
+      };
       data.timestamp = new Date();
       $("#loading").show();
       $("#submit").attr("disabled", true);
