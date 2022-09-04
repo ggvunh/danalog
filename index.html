@@ -402,10 +402,10 @@
         alert("Vui lòng chọn loại hình dịch vụ");
         return
       }
-      var code = generateCode(typeService);
       var data = null;
 
       if (typeService === 'Nhận hàng') {
+        var code = generateCode(typeService, nhngaynhan);
         data = {
           "nhngaynhan": nhngaynhan,
           "nhsocontainer": nhsocontainer,
@@ -426,6 +426,7 @@
       }
 
       if (typeService === 'Gia hạn ngày nhận hàng') {
+        var code = generateCode(typeService, ghngaynhan);
         data = {
           'ghngaynhan': ghngaynhan,
           'ghsocontainer': ghsocontainer,
@@ -446,6 +447,7 @@
       }
 
       if (typeService === 'Kiểm hóa') {
+        var code = generateCode(typeService, khngaynhan);
         data = {
           'khngaynhan': khngaynhan,
           'khsocontainer': khsocontainer,
@@ -463,6 +465,7 @@
       }
 
       if (typeService === 'Lệnh lấy mẫu') {
+        var code = generateCode(typeService, lmngaynhan);
         data = {
           'lmngaynhan': lmngaynhan,
           'lmsocontainer': lmsocontainer,
@@ -481,6 +484,7 @@
 
 
       if (typeService === 'Lệnh dán tem') {
+        var code = generateCode(typeService, dtngaynhan);
         data = {
           'dtngaynhan': dtngaynhan,
           'dtsocontainer': dtsocontainer,
@@ -503,7 +507,6 @@
       data.timestamp = new Date();
       $("#loading").show();
       $("#submit").attr("disabled", true);
-
       var url = "https://script.google.com/macros/s/AKfycbxbErJvGV3Jo0R7vdgRmfReT3uJirA5oB_8YkewR-XrysdPUYAXjXEGXPEbtD3e_NU/exec"
       $.ajax({
         type: "POST",
@@ -533,8 +536,9 @@
     });
 
     // generate code
-    function generateCode(type)
+    function generateCode(type, date)
     {
+      date = new Date(date);
       switch (type) {
         case 'Nhận hàng':
           var preType = '1';
@@ -555,15 +559,14 @@
           var preType = '0';
           break;
       }
-      var date = new Date();
       var day = date.getDate()
-      if (day < 9) {
+      if (day <= 9) {
         day = "0" + day.toString()
       } else {
         day = day.toString();
       }
       var month = date.getMonth() + 1;
-      if (month < 9) {
+      if (month <= 9) {
         month = "0" + month.toString()
       } else {
         month = month.toString()
